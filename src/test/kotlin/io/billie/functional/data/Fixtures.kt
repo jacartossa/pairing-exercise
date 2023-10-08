@@ -74,7 +74,8 @@ object Fixtures {
                 "  \"contact_details\": {\n" +
                 "    \"phone_number\": \"+443700100222\",\n" +
                 "    \"fax\": \"\",\n" +
-                "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
+                "    \"email\": \"yourquestions@bbc.co.uk\",\n" +
+                "    \"address\": \"Charlottenstrasse 4, 10969 Berlin\"\n" +
                 "  }\n" +
                 "}"
     }
@@ -144,6 +145,7 @@ object Fixtures {
         data["phone_number"] = "+443700100222"
         data["fax"] = ""
         data["email"] = "yourquestions@bbc.co.uk"
+        data["address"] = "Charlottenstrasse 4, 10969 Berlin"
         return data
     }
 

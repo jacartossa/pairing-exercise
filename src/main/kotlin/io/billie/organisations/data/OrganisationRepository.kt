@@ -85,13 +85,15 @@ class OrganisationRepository {
                             "(" +
                             "phone_number, " +
                             "fax, " +
-                            "email" +
-                            ") values(?,?,?)",
+                            "email, " +
+                            "address " +
+                            ") values(?,?,?,?)",
                     arrayOf("id")
                 )
                 ps.setString(1, contactDetails.phoneNumber)
                 ps.setString(2, contactDetails.fax)
                 ps.setString(3, contactDetails.email)
+                ps.setString(4, contactDetails.address)
                 ps
             },
             keyHolder
@@ -112,7 +114,8 @@ class OrganisationRepository {
             "o.contact_details_id as contact_details_id, " +
             "cd.phone_number as phone_number, " +
             "cd.fax as fax, " +
-            "cd.email as email " +
+            "cd.email as email, " +
+            "cd.address as address " +
             "from " +
             "organisations_schema.organisations o " +
             "INNER JOIN organisations_schema.contact_details cd on o.contact_details_id::uuid = cd.id::uuid " +
@@ -136,7 +139,8 @@ class OrganisationRepository {
             UUID.fromString(it.getString("contact_details_id")),
             it.getString("phone_number"),
             it.getString("fax"),
-            it.getString("email")
+            it.getString("email"),
+            it.getString("address")
         )
     }
 
